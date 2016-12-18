@@ -1,0 +1,28 @@
+.navbar-brand img{
+  width:90px;
+}
+.active {
+  color: cornflowerblue !important;
+  text-decoration:none !important;
+}
+
+.side-content{
+  border-left:dotted 1px silver !important;
+}
+
+.list-group-item:hover{
+  background-color:lightgray;
+  color:#000;
+}
+.list-group-item a,
+.list-group-item a:hover{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+
+.article-visual{
+  float:right;
+  width:100px;
+  margin:5px 0 5px 15px;
+}
