@@ -1,5 +1,5 @@
 import React from 'react'
-import ArticleList from './ArticleList'
+import Article from './Article'
 
 export default React.createClass({
 
@@ -7,13 +7,12 @@ export default React.createClass({
     // console.log('Articles.props.route',this.props.route)
     // console.log('Route.path == /articles ', this.props.route.path == '/articles' )
     // console.log('this.props.children', typeof this.props.children, this.props.children)
-    console.log('this.props.location.pathname',this.props.location.pathname);
+    //console.log('this.props.location.pathname',this.props.location.pathname);
 
-    const content = this.props.location.pathname == '/articles' ? <ActicleList articles={this.props.route.articles} /> : this.props.children;
+    const content = ''; //this.props.location.pathname == '/articles' ? <ActicleList articles={this.props.route.articles} /> : this.props.children;
 
     return (
       <div>
-        <h2>Articles</h2>
         {content}
       </div>
     )

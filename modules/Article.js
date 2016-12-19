@@ -3,7 +3,7 @@ import React from 'react'
 export default React.createClass({
 
   findArticle(articleSlug){
-    var articles = this.props.routes[1].articles;
+    var articles = this.props.routes[0].articles;
     for(var i=0; i< articles.length; i++){
       var a = articles[i];
       if( a.slug === articleSlug ) return a;
@@ -12,7 +12,7 @@ export default React.createClass({
 
   render() {
     console.log('Article props',this.props);
-    console.log('Article articles', this.props.routes[1].articles);
+    console.log('Article articles', this.props.routes[0].articles);
     const { articleSlug, theDate } = this.props.params;
     var a = this.findArticle(articleSlug);
 
