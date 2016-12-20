@@ -60,9 +60,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var express = __webpack_require__(11);
-	var path = __webpack_require__(12);
-	var compression = __webpack_require__(13);
+	var express = __webpack_require__(14);
+	var path = __webpack_require__(15);
+	var compression = __webpack_require__(16);
 
 	var app = express();
 
@@ -140,35 +140,73 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _About = __webpack_require__(7);
+	var _About = __webpack_require__(9);
 
 	var _About2 = _interopRequireDefault(_About);
 
-	var _Articles = __webpack_require__(8);
+	var _Articles = __webpack_require__(10);
 
 	var _Articles2 = _interopRequireDefault(_Articles);
 
-	var _Article = __webpack_require__(9);
+	var _Article = __webpack_require__(12);
 
 	var _Article2 = _interopRequireDefault(_Article);
 
-	var _Home = __webpack_require__(10);
+	var _Home = __webpack_require__(13);
 
 	var _Home2 = _interopRequireDefault(_Home);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var blogData = [{
+	    id: 1,
+	    slug: 'article-one',
+	    title: 'article one',
+	    body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+	    visual: '/img/articles/visual.png',
+	    timestamp: '2017-01-01'
+	}, {
+	    id: 2,
+	    slug: 'article-two',
+	    title: 'article two',
+	    body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+	    visual: '/img/articles/visual.png',
+	    timestamp: '2017-01-02'
+	}, {
+	    id: 3,
+	    slug: 'article-three',
+	    title: 'article three',
+	    body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+	    visual: '/img/articles/visual.png',
+	    timestamp: '2017-01-03'
+	}, {
+	    id: 4,
+	    slug: 'article-four',
+	    title: 'article four',
+	    body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+	    visual: '/img/articles/visual.png',
+	    timestamp: '2017-01-04'
+	}, {
+	    id: 5,
+	    slug: 'article-five',
+	    title: 'article five',
+	    body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+	    visual: '/img/articles/visual.png',
+	    timestamp: '2017-01-05'
+	}]; // modules/routes.js
+
+
 	module.exports = _react2.default.createElement(
-	  _reactRouter.Route,
-	  { path: '/', component: _App2.default },
-	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
-	  _react2.default.createElement(
 	    _reactRouter.Route,
-	    { path: '/articles', component: _Articles2.default },
-	    _react2.default.createElement(_reactRouter.Route, { path: '/articles/:articleSlug/:theDate', component: _Article2.default })
-	  ),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default })
-	); // modules/routes.js
+	    { path: '/', component: _App2.default, articles: blogData, test: 'testing' },
+	    _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
+	    _react2.default.createElement(
+	        _reactRouter.Route,
+	        { path: '/articles', component: _Articles2.default, articles: blogData },
+	        _react2.default.createElement(_reactRouter.Route, { path: '/articles/:articleSlug/:theDate', component: _Article2.default })
+	    ),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/about', component: _About2.default })
+	);
 
 /***/ },
 /* 5 */
@@ -177,7 +215,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -188,53 +226,99 @@
 
 	var _NavLink2 = _interopRequireDefault(_NavLink);
 
+	var _LinkList = __webpack_require__(7);
+
+	var _LinkList2 = _interopRequireDefault(_LinkList);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'App',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      { className: 'main' },
-	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Ecochain blog'
-	      ),
-	      _react2.default.createElement(
-	        'ul',
-	        { role: 'nav', className: 'main-navigation' },
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/', onlyActiveOnIndex: true },
-	            'Home'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/about' },
-	            'About'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/articles' },
-	            'Articles'
-	          )
-	        )
-	      ),
-	      this.props.children
-	    );
-	  }
+	    displayName: 'App',
+	    render: function render() {
+	        console.log('App.props.children', this.props.children);
+	        return _react2.default.createElement(
+	            'div',
+	            { className: 'main' },
+	            _react2.default.createElement(
+	                'nav',
+	                { className: 'navbar navbar-default' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'container-fluid' },
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'navbar-header' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#main-nav', 'aria-expanded': 'false' },
+	                            _react2.default.createElement(
+	                                'span',
+	                                { className: 'sr-only' },
+	                                'Toggle navigation'
+	                            ),
+	                            _react2.default.createElement('span', { className: 'icon-bar' }),
+	                            _react2.default.createElement('span', { className: 'icon-bar' }),
+	                            _react2.default.createElement('span', { className: 'icon-bar' })
+	                        ),
+	                        _react2.default.createElement(
+	                            'a',
+	                            { className: 'navbar-brand', href: '/' },
+	                            _react2.default.createElement('img', { src: '/img/logo.png' })
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'div',
+	                        { className: 'collapse navbar-collapse', id: 'main-nav' },
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { role: 'nav', className: 'nav navbar-nav main-navigation' },
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    _NavLink2.default,
+	                                    { to: '/', onlyActiveOnIndex: true },
+	                                    'Home'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    _NavLink2.default,
+	                                    { to: '/articles' },
+	                                    'Articles'
+	                                )
+	                            ),
+	                            _react2.default.createElement(
+	                                'li',
+	                                null,
+	                                _react2.default.createElement(
+	                                    _NavLink2.default,
+	                                    { to: '/about' },
+	                                    'About'
+	                                )
+	                            )
+	                        )
+	                    )
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'row' },
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'col-xs-8 main-content' },
+	                    this.props.children
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'col-xs-4 side-content' },
+	                    _react2.default.createElement(_LinkList2.default, { articles: this.props.route.articles })
+	                )
+	            )
+	        );
+	    }
 	});
 
 /***/ },
@@ -272,39 +356,16 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _SearchBar = __webpack_require__(8);
 
-	exports.default = _react2.default.createClass({
-	  displayName: 'About',
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      'About'
-	    );
-	  }
-	});
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
+	var _SearchBar2 = _interopRequireDefault(_SearchBar);
 
 	var _NavLink = __webpack_require__(6);
 
@@ -313,62 +374,91 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'Articles',
+	    displayName: 'LinkList',
 
-	  contextTypes: {
-	    router: _react2.default.PropTypes.object
-	  },
+	    getInitialState: function getInitialState() {
+	        return { filterText: '' };
+	    },
+	    handleUserInput: function handleUserInput(filterText) {
+	        filterText = filterText.toLowerCase();
+	        this.setState({
+	            filterText: filterText
+	        });
+	    },
+	    render: function render() {
+	        var _this = this;
 
-	  handleSubmit: function handleSubmit(event) {
-	    event.preventDefault();
-	    var articleSlug = event.target.elements[0].value;
-	    var theDate = event.target.elements[1].value;
-	    var path = '/articles/' + articleSlug + '/' + theDate;
-	    this.context.router.push(path);
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'h2',
-	        null,
-	        'Articles'
-	      ),
-	      _react2.default.createElement(
-	        'ul',
-	        null,
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/home' },
-	            'Home'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            'form',
-	            { onSubmit: this.handleSubmit },
-	            _react2.default.createElement('input', { type: 'text', placeholder: 'articleSlug' }),
-	            ' / ',
-	            ' ',
-	            _react2.default.createElement('input', { type: 'text', placeholder: 'theDate' }),
-	            ' ',
+	        console.log('this LinkList', this, this.props.articles);
+	        var rows = this.props.articles.map(function (article) {
+	            if (_this.state.filterText.length && article.title.toLowerCase().indexOf(_this.state.filterText) === -1) {
+	                return;
+	            }
+	            var link = "/articles/" + article.slug + "/" + article.timestamp;
+	            return _react2.default.createElement(
+	                'li',
+	                { className: 'list-group-item', key: article.title },
+	                _react2.default.createElement(
+	                    _NavLink2.default,
+	                    { to: link },
+	                    article.title
+	                )
+	            );
+	        });
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            _react2.default.createElement(_SearchBar2.default, {
+	                filterText: this.state.filterText,
+	                onUserInput: this.handleUserInput
+	            }),
 	            _react2.default.createElement(
-	              'button',
-	              { type: 'submit' },
-	              'Go'
+	                'ul',
+	                { className: 'list-group' },
+	                rows
 	            )
-	          )
-	        )
-	      ),
-	      this.props.children
-	    );
-	  }
+	        );
+	    }
+	});
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	    displayName: "SearchBar",
+	    handleChange: function handleChange() {
+	        this.props.onUserInput(this.filterTextInput.value);
+	    },
+	    render: function render() {
+	        var _this = this;
+
+	        return _react2.default.createElement(
+	            "form",
+	            null,
+	            _react2.default.createElement("input", {
+	                type: "text",
+	                placeholder: "Search...",
+	                value: this.props.filterText,
+	                ref: function ref(input) {
+	                    return _this.filterTextInput = input;
+	                },
+	                onChange: this.handleChange,
+	                className: "form-control"
+	            })
+	        );
+	    }
 	});
 
 /***/ },
@@ -388,21 +478,20 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'Article',
+	  displayName: 'About',
 	  render: function render() {
-	    var _props$params = this.props.params,
-	        articleSlug = _props$params.articleSlug,
-	        theDate = _props$params.theDate;
-
 	    return _react2.default.createElement(
 	      'div',
 	      null,
 	      _react2.default.createElement(
 	        'h2',
 	        null,
-	        articleSlug,
-	        ' / ',
-	        theDate
+	        'About'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos est nemo. Amet assumenda doloremque nihil odio voluptatem. Aliquid consectetur dignissimos fugiat maiores minima nemo placeat quaerat ullam vel veritatis?'
 	      )
 	    );
 	  }
@@ -410,6 +499,183 @@
 
 /***/ },
 /* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _ArticleList = __webpack_require__(11);
+
+	var _ArticleList2 = _interopRequireDefault(_ArticleList);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'Articles',
+	  render: function render() {
+	    console.log('Articles.props.route.articles', this.props.route.articles);
+	    // console.log('Route.path == /articles ', this.props.route.path == '/articles' )
+	    // console.log('this.props.children', typeof this.props.children, this.props.children)
+	    // console.log('this.props.location.pathname',this.props.location.pathname);
+	    // console.log('articles',this.props.route.articles);
+
+	    var articles = this.props.route.articles;
+
+	    var content = this.props.location.pathname == '/articles' ? _react2.default.createElement(_ArticleList2.default, { articles: articles }) : this.props.children;
+
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Articles'
+	      ),
+	      content
+	    );
+	  }
+	});
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavLink = __webpack_require__(6);
+
+	var _NavLink2 = _interopRequireDefault(_NavLink);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function ArticleShort(props) {
+	    var url = '/articles/' + props.slug + '/' + props.timestamp;
+	    var body = props.body;
+	    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'article short' },
+	        _react2.default.createElement(
+	            'h3',
+	            { className: 'article-title' },
+	            props.title,
+	            '  ',
+	            _react2.default.createElement(
+	                'span',
+	                { className: 'article-date' },
+	                new Date(props.timestamp).toLocaleString('en-US', options)
+	            )
+	        ),
+	        _react2.default.createElement('div', { dangerouslySetInnerHTML: { __html: body } }),
+	        _react2.default.createElement(
+	            _NavLink2.default,
+	            { to: url },
+	            props.title
+	        )
+	    );
+	}
+
+	exports.default = _react2.default.createClass({
+	    displayName: 'ArticleList',
+	    render: function render() {
+	        var rows = [];
+	        var lastCategory = null;
+	        this.props.articles.forEach(function (a) {
+	            rows.push(_react2.default.createElement(ArticleShort, { title: a.title, slug: a.slug, timestamp: a.timestamp, body: a.body }));
+	        });
+	        return _react2.default.createElement(
+	            'div',
+	            null,
+	            rows
+	        );
+	    }
+	});
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _NavLink = __webpack_require__(6);
+
+	var _NavLink2 = _interopRequireDefault(_NavLink);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = _react2.default.createClass({
+	  displayName: 'Article',
+	  findArticle: function findArticle(articleSlug) {
+	    var articles = this.props.routes[0].articles;
+	    for (var i = 0; i < articles.length; i++) {
+	      var a = articles[i];
+	      if (a.slug === articleSlug) return a;
+	    };
+	  },
+	  render: function render() {
+	    console.log('Article props', this.props);
+	    console.log('Article articles', this.props.routes[0].articles);
+	    var _props$params = this.props.params,
+	        articleSlug = _props$params.articleSlug,
+	        theDate = _props$params.theDate;
+
+	    var a = this.findArticle(articleSlug);
+	    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+	    return _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _NavLink2.default,
+	          { to: '/articles' },
+	          'Back to list'
+	        )
+	      ),
+	      _react2.default.createElement(
+	        'h3',
+	        { className: 'article-title' },
+	        a.title,
+	        '  ',
+	        _react2.default.createElement(
+	          'span',
+	          { className: 'article-date' },
+	          new Date(theDate).toLocaleString('en-US', options)
+	        )
+	      ),
+	      _react2.default.createElement('img', { className: 'article-visual', src: a.visual }),
+	      _react2.default.createElement('span', { className: 'article-body', dangerouslySetInnerHTML: { __html: a.body } })
+	    );
+	  }
+	});
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -430,25 +696,34 @@
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      'Home'
+	      _react2.default.createElement(
+	        'h2',
+	        null,
+	        'Home'
+	      ),
+	      _react2.default.createElement(
+	        'p',
+	        null,
+	        'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eos est nemo. Amet assumenda doloremque nihil odio voluptatem. Aliquid consectetur dignissimos fugiat maiores minima nemo placeat quaerat ullam vel veritatis?'
+	      )
 	    );
 	  }
 	});
 
 /***/ },
-/* 11 */
+/* 14 */
 /***/ function(module, exports) {
 
 	module.exports = require("express");
 
 /***/ },
-/* 12 */
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = require("path");
 
 /***/ },
-/* 13 */
+/* 16 */
 /***/ function(module, exports) {
 
 	module.exports = require("compression");

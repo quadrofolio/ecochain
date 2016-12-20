@@ -1,22 +1,31 @@
 import React from 'react'
-import Article from './Article'
+import NavLink from './NavLink'
+
+function ArticleShort(props) {
+    var url = '/articles/'+props.slug+'/'+props.timestamp;
+    var body = props.body;
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return(
+        <div className="article short">
+            <h3 className="article-title">{props.title}  <span className="article-date">{new Date(props.timestamp).toLocaleString('en-US', options)}</span></h3>
+            <div dangerouslySetInnerHTML={{__html: body}}></div>
+            <NavLink to={url}>Read full article</NavLink>
+        </div>
+    )
+}
 
 export default React.createClass({
 
   render() {
-    // console.log('Articles.props.route',this.props.route)
-    // console.log('Route.path == /articles ', this.props.route.path == '/articles' )
-    // console.log('this.props.children', typeof this.props.children, this.props.children)
-    //console.log('this.props.location.pathname',this.props.location.pathname);
-
-    //const content = this.props.location.pathname == '/articles' ? <ActicleList articles={this.props.route.articles} /> : this.props.children;
-
-    const content = this.props.location.pathname == '/articles' ? <ActicleList articles={this.props.route.articles} /> : this.props.children;
-    
-    return (
-      <div>
-        {content}
-      </div>
-    )
+      var rows = [];
+      var lastCategory = null;
+      this.props.articles.forEach((a) => {
+        rows.push(<ArticleShort title={a.title} slug={a.slug} timestamp={a.timestamp} body={a.body}/>);
+      });
+      return (
+        <div>
+            {rows}
+        </div>
+      )
   }
 })

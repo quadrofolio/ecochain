@@ -11,42 +11,82 @@ const blogData = [
     {
         id: 1,
         slug: 'article-one',
-        title: 'article one',
+        title: 'Article one',
         body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
         visual: '/img/articles/visual.png',
-        timestamp: '20170101'
+        timestamp: '2017-01-01'
     },
     {
         id: 2,
         slug: 'article-two',
-        title: 'article two',
+        title: 'Article two',
         body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
         visual: '/img/articles/visual.png',
-        timestamp: '20170102'
+        timestamp: '2017-01-02'
     },
     {
         id: 3,
         slug: 'article-three',
-        title: 'article three',
+        title: 'Article three',
         body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
         visual: '/img/articles/visual.png',
-        timestamp: '20170103'
+        timestamp: '2017-01-03'
     },
     {
         id: 4,
         slug: 'article-four',
-        title: 'article four',
+        title: 'Article four',
         body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
         visual: '/img/articles/visual.png',
-        timestamp: '20170104'
+        timestamp: '2017-01-04'
     },
     {
         id: 5,
-        slug: 'article-five',
+        slug: 'Article-five',
         title: 'article five',
         body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
         visual: '/img/articles/visual.png',
-        timestamp: '20170105'
+        timestamp: '2017-01-05'
+    },
+    {
+        id: 6,
+        slug: 'article-six',
+        title: 'Article six',
+        body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+        visual: '/img/articles/visual.png',
+        timestamp: '2017-01-06'
+    },
+    {
+        id: 7,
+        slug: 'article-seven',
+        title: 'Article seven',
+        body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+        visual: '/img/articles/visual.png',
+        timestamp: '2017-01-07'
+    },
+    {
+        id: 8,
+        slug: 'article-eight',
+        title: 'Article eight',
+        body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+        visual: '/img/articles/visual.png',
+        timestamp: '2017-01-08'
+    },
+    {
+        id: 9,
+        slug: 'article-nine',
+        title: 'Article nine',
+        body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+        visual: '/img/articles/visual.png',
+        timestamp: '2017-01-09'
+    },
+    {
+        id: 10,
+        slug: 'article-ten',
+        title: 'Article ten',
+        body: '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto autem dignissimos fugiat harum, hic molestias recusandae reiciendis. Ab aut consequatur corporis dignissimos eveniet minima minus nemo rerum. Beatae, vel!</p>',
+        visual: '/img/articles/visual.png',
+        timestamp: '2017-01-10'
     }
 ];
 
