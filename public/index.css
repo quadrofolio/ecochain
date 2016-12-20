@@ -21,6 +21,10 @@
   color:inherit;
 }
 
+.article{
+    margin:0 0 10px 0;
+    clear:both;
+}
 .article-visual{
   float:right;
   width:100px;

@@ -9,8 +9,10 @@ export default React.createClass({
     // console.log('this.props.children', typeof this.props.children, this.props.children)
     //console.log('this.props.location.pathname',this.props.location.pathname);
 
-    const content = ''; //this.props.location.pathname == '/articles' ? <ActicleList articles={this.props.route.articles} /> : this.props.children;
+    //const content = this.props.location.pathname == '/articles' ? <ActicleList articles={this.props.route.articles} /> : this.props.children;
 
+    const content = this.props.location.pathname == '/articles' ? <ActicleList articles={this.props.route.articles} /> : this.props.children;
+    
     return (
       <div>
         {content}
